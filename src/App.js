@@ -1,12 +1,14 @@
 import React from "react";
 import './App.css';
-import { Api } from './api/Api'
+
 import { Header } from "./Components/Header";
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./Components/Login/Login";
 import { UserStorage } from "./UserContext";
+import {User} from './Components/User/User'
+import { ProtectedRoute } from "./Helper/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
           <Routes>
 
             <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
+            <Route path="login/*" element={<Login />} />
+            <ProtectedRoute path="conta/*" element={<User />} />
 
           </Routes>
 
