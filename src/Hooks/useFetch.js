@@ -22,7 +22,7 @@ export const useFetch = () => {
             setLoading(false)
             return {response, json}
         }
-    })
+    },[])
 
     return {
         data, loading, error, request
